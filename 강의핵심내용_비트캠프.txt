@@ -1,0 +1,42 @@
+[강의 핵심] = 메모리 구조
+<클래스 도식도>                 Class Human
+1. 필드(멤버변수의 집합)        public String name // public int age
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+2. 생성자(void 또는 파라미터(매개변수)형)     public Human() || public Human(String n, int a)
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+3. 메서드(void 또는 파라미터(매개변수)형)   public void showInfo() || public void showInfo(String n, int a)
+
+
+<스태틱 도식도>
+1. 클래스 필드 구간                String name // int age
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+2. 클래스 생성자/메서드 구간        Human() || showInfo()          
+
+((1번 상단)) 스태틱 영역(전역변수가 저장되는 곳)
+--> class Human에 [필드(멤버변수들(name, age 등))와 메서드(실행구문 등)]가 정의됨
+
+
+<힙 도식도>
+1. 필드 구간(멤버변수의 집합)    String name = "아무개" // int age = 20
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+2. 생성자/메서드 구간            Human h1 = new Human("이찬희", 32); || h1.showInfo();
+
+((2번 우변)) 힙 영역(참조 형식이 저장되는 곳)
+--> Human h1 = new Human(); -> new에 의해 (Human 클래스에 있는 정보 기반의)인스턴스(*주소번지[필드 + 메서드])가 생성됨
+
+
+<스택 도식도>
+1. main 호출 구간			 Human h1 = new Human("이찬희", 32); // h1.showInfo();
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+2. 중괄호 실행 구간
+
+((3번 좌변)) 스택 영역(main이 호출되어 인스턴스가 실행되는 곳)
+--> Human h1 = new Human(); -> 힙의*주소번지를 지역변수(h1)에 저장함
+
+((4번))
+h1.name = "아무개" --> h1(힙의*주소번지)의 name에 "아무개"라고 저장
+h1.age = 20 --> h1(힙의*주소번지)의 age에 20라고 저장
+
+((5번))
+h1.showInfo(); --> h1(힙의*주소번지)의 showInfo()메서드를 실행
+
