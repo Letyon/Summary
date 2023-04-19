@@ -2,9 +2,9 @@
 <클래스 도식도>                 Class Human
 1. 필드(멤버변수의 집합)        public String name // public int age
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-2. 생성자(void 또는 파라미터(매개변수)형)     public Human() || public Human(String n, int a)
+2. 생성자(void(기본값) 또는 파라미터(매개변수)형(입력값))     public Human() || public Human(String n, int a)
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-3. 메서드(void 또는 파라미터(매개변수)형)   public void showInfo() || public void showInfo(String n, int a)
+3. 메서드(void(기본값) 또는 파라미터(매개변수)형(입력값))   public void showInfo() || public void showInfo(String n, int a)
 
 
 <스태틱 도식도>
@@ -22,7 +22,7 @@
 2. 생성자/메서드 구간            Human h1 = new Human("이찬희", 32); || h1.showInfo();
 
 ((2번 우변)) 힙 영역(참조 형식이 저장되는 곳)
---> Human h1 = new Human(); -> new에 의해 (Human 클래스에 있는 정보 기반의)인스턴스(*주소번지[필드 + 메서드])가 생성됨
+--> Human h1 = new Human(); -> new에 의해 (Human 클래스에 있는 정보 기반의)인스턴스(*주소번지[필드 + 생성자/메서드])가 생성됨
 
 
 <스택 도식도>
@@ -30,7 +30,7 @@
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 2. 중괄호 실행 구간
 
-((3번 좌변)) 스택 영역(main이 호출되어 인스턴스가 실행되는 곳)
+((3번 좌변)) 스택 영역(main이 *주소번지를 호출하여 인스턴스가 실행되는 곳)
 --> Human h1 = new Human(); -> 힙의*주소번지를 지역변수(h1)에 저장함
 
 ((4번))
